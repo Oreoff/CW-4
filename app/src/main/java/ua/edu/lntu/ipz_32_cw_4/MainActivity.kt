@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -25,6 +26,9 @@ import ua.edu.lntu.ipz_32_cw_4.ui.StartScreen
 import ua.edu.lntu.ipz_32_cw_4.ui.SecondScreen
 import androidx.compose.material3.TopAppBar
 
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.unit.sp
@@ -57,7 +61,14 @@ fun Greeting( modifier: Modifier = Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Navigation Example") },
+                title = {
+                    Text(text = "Control Work")
+                        },
+                navigationIcon = {
+                    IconButton(onClick = { navController.navigateUp() }) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                    }
+                },
                 modifier = modifier,
             )
         }
