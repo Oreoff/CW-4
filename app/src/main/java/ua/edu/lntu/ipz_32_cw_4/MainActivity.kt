@@ -22,6 +22,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ua.edu.lntu.ipz_32_cw_4.ui.StartScreen
+import ua.edu.lntu.ipz_32_cw_4.ui.SecondScreen
 import androidx.compose.material3.TopAppBar
 
 import androidx.compose.material3.TopAppBarDefaults
@@ -69,6 +70,10 @@ fun Greeting( modifier: Modifier = Modifier) {
             composable(route = Screen.StartScreen.route)
             {
                 StartScreen(navController = navController, modifier = Modifier)
+            }
+            composable(route = Screen.SecondScreen.route)
+            {
+SecondScreen(navController = navController, modifier = Modifier)
             }
         }
     }
